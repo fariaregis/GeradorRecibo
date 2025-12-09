@@ -31,7 +31,7 @@ Sistema desktop desenvolvido em Java para geração e gerenciamento de recibos d
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/Recibo.git
+   git clone https://github.com/fariaregis/GeradorRecibo.git
    cd Recibo
    ```
 
