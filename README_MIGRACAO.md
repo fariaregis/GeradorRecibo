@@ -25,24 +25,24 @@
 
 ### 🏢 Empresa:
 ```
-Nome: Motoboy Ajato Express
-CNPJ: 45.677.973/0001-06
-Cidade: Uberlândia/MG
-Site: www.motoboyajato.com.br
+Nome: Transportadora Expresso Brasil Ltda
+CNPJ: 12.345.678/0001-90
+Cidade: São Paulo/SP
+Site: www.transportadoraexemplo.com.br
 ```
 
 ### 👥 Cliente:
 ```
-Nome: Laticínios Tirolez Ltda
-CNPJ: 55.885.321/0001-02
-Cidade: São Paulo/SP
+Nome: Comércio de Alimentos Ltda
+CNPJ: 98.765.432/0001-10
+Cidade: Rio de Janeiro/RJ
 ```
 
 ### 📄 Recibo:
 ```
 Número: 001-2025
-Valor: R$ 200,00
-Serviço: Entrega expressa de documentos
+Valor: R$ 250,00
+Serviço: Transporte de mercadorias
 Pagamento: PIX
 ```
 

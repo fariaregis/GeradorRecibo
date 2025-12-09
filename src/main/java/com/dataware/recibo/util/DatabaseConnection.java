@@ -179,11 +179,11 @@ public class DatabaseConnection {
         stmt.execute(
             "INSERT INTO tb_empresas (tipo_pessoa, nome_razao_social, cpf_cnpj, endereco_completo, " +
             "numero, bairro, cidade, estado, cep, celular, email, site) VALUES " +
-            "('J', 'Transportadora Expresso Brasil Ltda', '45.677.973/0001-06', 'Av. Principal', " +
-            "'1000', 'Centro', 'São Paulo', 'SP', '01001-000', '(11) 99999-9999', " +
-            "'contato@transportadoraexemplo.com.br', 'www.transportadoraexemplo.com.br'), " +
+            "('J', 'Empresa de Serviços Exemplo Ltda', '12.345.678/0001-90', 'Rua das Amostras', " +
+            "'123', 'Centro', 'São Paulo', 'SP', '01001-000', '(11) 99999-9999', " +
+            "'contato@empresaexemplo.com.br', 'www.empresaexemplo.com.br'), " +
             "('F', 'João da Silva', '123.456.789-00', 'Rua Exemplo', " +
-            "'123', 'Centro', 'Rio de Janeiro', 'RJ', '20000-000', '(21) 98888-7777', " +
+            "'456', 'Centro', 'Rio de Janeiro', 'RJ', '20000-000', '(21) 98888-7777', " +
             "'contato@exemplo.com', NULL)"
         );
         
