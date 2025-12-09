@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.dataware.recibo.controller.DashboardController">
+
+    <!-- Menu Superior -->
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="Arquivo">
+                    <MenuItem text="Sair" onAction="#handleSair"/>
+                </Menu>
+                <Menu text="Cadastros">
+                    <MenuItem text="Clientes" onAction="#handleClientes"/>
+                    <MenuItem text="Categorias" onAction="#handleCategorias"/>
+                </Menu>
+                <Menu text="Recibos">
+                    <MenuItem text="Novo Recibo" onAction="#handleNovoRecibo"/>
+                    <MenuItem text="Listar Recibos" onAction="#handleListarRecibos"/>
+                </Menu>
+                <Menu text="Ajuda">
+                    <MenuItem text="Sobre" onAction="#handleSobre"/>
+                </Menu>
+            </MenuBar>
+            
+            <!-- Barra de título com empresa logada -->
+            <HBox style="-fx-background-color: #19344E; -fx-padding: 10;" spacing="20">
+                <Label text="Sistema de Gestão de Recibos" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="lblEmpresaLogada" style="-fx-text-fill: white; -fx-font-size: 12px;"/>
+                <Button text="Trocar Empresa" onAction="#handleTrocarEmpresa" 
+                        style="-fx-background-color: #2C5F8D; -fx-text-fill: white; -fx-font-size: 11px;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Conteúdo Central -->
+    <center>
+        <VBox spacing="30" alignment="CENTER" style="-fx-padding: 40;">
+            
+            <Label text="Bem-vindo ao Sistema de Gestão de Recibos" 
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #19344E;"/>
+            
+            <!-- Grid com botões principais -->
+            <GridPane hgap="20" vgap="20" alignment="CENTER">
+                <!-- Linha 1 -->
+                <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                      style="-fx-background-color: #F0F0F0; -fx-padding: 30; -fx-background-radius: 10;"
+                      prefWidth="250" prefHeight="200">
+                    <Label text="📝" style="-fx-font-size: 48px;"/>
+                    <Label text="Novo Recibo" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Button text="Criar Recibo" onAction="#handleNovoRecibo" 
+                            style="-fx-background-color: #19344E; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 30;"/>
+                </VBox>
+                
+                <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                      style="-fx-background-color: #F0F0F0; -fx-padding: 30; -fx-background-radius: 10;"
+                      prefWidth="250" prefHeight="200">
+                    <Label text="📋" style="-fx-font-size: 48px;"/>
+                    <Label text="Recibos" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Button text="Ver Recibos" onAction="#handleListarRecibos" 
+                            style="-fx-background-color: #19344E; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 30;"/>
+                </VBox>
+                
+                <!-- Linha 2 -->
+                <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                      style="-fx-background-color: #F0F0F0; -fx-padding: 30; -fx-background-radius: 10;"
+                      prefWidth="250" prefHeight="200">
+                    <Label text="👥" style="-fx-font-size: 48px;"/>
+                    <Label text="Clientes" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Button text="Gerenciar Clientes" onAction="#handleClientes" 
+                            style="-fx-background-color: #19344E; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 30;"/>
+                </VBox>
+                
+                <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                      style="-fx-background-color: #F0F0F0; -fx-padding: 30; -fx-background-radius: 10;"
+                      prefWidth="250" prefHeight="200">
+                    <Label text="🏷️" style="-fx-font-size: 48px;"/>
+                    <Label text="Categorias" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Button text="Gerenciar Categorias" onAction="#handleCategorias" 
+                            style="-fx-background-color: #19344E; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 30;"/>
+                </VBox>
+            </GridPane>
+            
+            <!-- Estatísticas -->
+            <HBox spacing="30" alignment="CENTER">
+                <VBox alignment="CENTER" spacing="5">
+                    <Label fx:id="lblTotalRecibos" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #19344E;"/>
+                    <Label text="Total de Recibos" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                </VBox>
+                <Separator orientation="VERTICAL" prefHeight="60"/>
+                <VBox alignment="CENTER" spacing="5">
+                    <Label fx:id="lblTotalClientes" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #19344E;"/>
+                    <Label text="Clientes Cadastrados" style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+                </VBox>
+            </HBox>
+            
+        </VBox>
+    </center>
+
+    <!-- Rodapé -->
+    <bottom>
+        <HBox style="-fx-background-color: #F0F0F0; -fx-padding: 10;" alignment="CENTER">
+            <Label text="© 2025 DataWare - Sistema de Gestão de Recibos v1.0" style="-fx-font-size: 11px; -fx-text-fill: #666;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+
+

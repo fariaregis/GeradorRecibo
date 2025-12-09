@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.dataware.recibo.controller.ReciboListController">
+
+    <top>
+        <VBox>
+            <HBox style="-fx-background-color: #19344E; -fx-padding: 15;" spacing="20" alignment="CENTER_LEFT">
+                <Button text="← Voltar" onAction="#handleVoltar" 
+                        style="-fx-background-color: #2C5F8D; -fx-text-fill: white;"/>
+                <Label text="Recibos Emitidos" 
+                       style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            </HBox>
+            
+            <HBox spacing="10" style="-fx-padding: 15;" alignment="CENTER_LEFT">
+                <TextField fx:id="txtBusca" promptText="Buscar por número..." prefWidth="300"/>
+                <Button text="Buscar" onAction="#handleBuscar" 
+                        style="-fx-background-color: #19344E; -fx-text-fill: white;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ Novo Recibo" onAction="#handleNovoRecibo" 
+                        style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableRecibos" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn text="Número" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="numeroRecibo"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Data" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="dataEmissao"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Cliente" prefWidth="250">
+                    <cellValueFactory><PropertyValueFactory property="cliente"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Categoria" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="categoria"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Valor" prefWidth="120">
+                    <cellValueFactory><PropertyValueFactory property="valor"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Ações" prefWidth="180">
+                    <cellFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="DUMMY" />
+                    </cellFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox style="-fx-background-color: #F0F0F0; -fx-padding: 10;" spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="lblTotal" text="Total: 0 recibos"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+
+

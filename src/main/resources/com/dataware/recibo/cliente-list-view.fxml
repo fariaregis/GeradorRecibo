@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.dataware.recibo.controller.ClienteListController">
+
+    <top>
+        <VBox>
+            <HBox style="-fx-background-color: #19344E; -fx-padding: 15;" spacing="20" alignment="CENTER_LEFT">
+                <Button text="← Voltar" onAction="#handleVoltar" 
+                        style="-fx-background-color: #2C5F8D; -fx-text-fill: white;"/>
+                <Label text="Gerenciamento de Clientes" 
+                       style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            </HBox>
+            
+            <HBox spacing="10" style="-fx-padding: 15;" alignment="CENTER_LEFT">
+                <TextField fx:id="txtBusca" promptText="Buscar por nome..." prefWidth="300"/>
+                <Button text="Buscar" onAction="#handleBuscar" 
+                        style="-fx-background-color: #19344E; -fx-text-fill: white;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ Novo Cliente" onAction="#handleNovoCliente" 
+                        style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableClientes" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn text="ID" prefWidth="60">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Nome/Razão Social" prefWidth="250">
+                    <cellValueFactory><PropertyValueFactory property="nomeRazaoSocial"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Tipo" prefWidth="100">
+                    <cellValueFactory><PropertyValueFactory property="tipoPessoaDescricao"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="CPF/CNPJ" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="cpfCnpj"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Cidade" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="cidade"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Telefone" prefWidth="120">
+                    <cellValueFactory><PropertyValueFactory property="telefone"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Ações" prefWidth="150">
+                    <cellFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="DUMMY" />
+                    </cellFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox style="-fx-background-color: #F0F0F0; -fx-padding: 10;" spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="lblTotal" text="Total: 0 clientes"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+
+

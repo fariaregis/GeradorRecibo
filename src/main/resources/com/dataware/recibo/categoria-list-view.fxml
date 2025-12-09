@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.dataware.recibo.controller.CategoriaListController">
+
+    <top>
+        <VBox>
+            <HBox style="-fx-background-color: #19344E; -fx-padding: 15;" spacing="20" alignment="CENTER_LEFT">
+                <Button text="← Voltar" onAction="#handleVoltar" 
+                        style="-fx-background-color: #2C5F8D; -fx-text-fill: white;"/>
+                <Label text="Gerenciamento de Categorias" 
+                       style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            </HBox>
+            
+            <HBox spacing="10" style="-fx-padding: 15;" alignment="CENTER_LEFT">
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="+ Nova Categoria" onAction="#handleNovaCategoria" 
+                        style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableCategorias" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn text="ID" prefWidth="60">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Nome" prefWidth="250">
+                    <cellValueFactory><PropertyValueFactory property="nome"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Descrição" prefWidth="400">
+                    <cellValueFactory><PropertyValueFactory property="descricao"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Ações" prefWidth="180">
+                    <cellFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="DUMMY" />
+                    </cellFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox style="-fx-background-color: #F0F0F0; -fx-padding: 10;" spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="lblTotal" text="Total: 0 categorias"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+
+

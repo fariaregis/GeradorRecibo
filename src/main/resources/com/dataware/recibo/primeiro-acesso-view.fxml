@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.dataware.recibo.controller.PrimeiroAcessoController">
+
+    <top>
+        <VBox style="-fx-background-color: #19344E; -fx-padding: 20;" spacing="5" alignment="CENTER">
+            <Label text="Bem-vindo ao Sistema de Gestão de Recibos!" 
+                   style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Label text="Configure sua empresa para começar" 
+                   style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: white;">
+            <VBox spacing="20" style="-fx-padding: 40;">
+                
+                <!-- Tipo de Pessoa -->
+                <VBox spacing="10">
+                    <Label text="Tipo de Pessoa:" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <HBox spacing="20">
+                        <RadioButton fx:id="rbPessoaFisica" text="Pessoa Física" selected="true"/>
+                        <RadioButton fx:id="rbPessoaJuridica" text="Pessoa Jurídica"/>
+                    </HBox>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Dados Principais -->
+                <VBox spacing="15">
+                    <Label text="Dados da Empresa/Pessoa:" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    
+                    <GridPane hgap="15" vgap="15">
+                        <Label text="* Nome/Razão Social:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="txtNomeRazaoSocial" promptText="Nome completo ou razão social" 
+                                   prefWidth="400" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label fx:id="lblNomeFantasia" text="Nome Fantasia:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtNomeFantasia" promptText="Nome fantasia (opcional)" 
+                                   prefWidth="400" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label fx:id="lblDocumento" text="* CPF:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <TextField fx:id="txtCpfCnpj" promptText="000.000.000-00" 
+                                   prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        
+                        <Label fx:id="lblRgIe" text="RG:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                        <TextField fx:id="txtRgInscricaoEstadual" promptText="RG ou Inscrição Estadual" 
+                                   prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        
+                        <Label fx:id="lblInscMunicipal" text="Inscrição Municipal:" GridPane.columnIndex="0" GridPane.rowIndex="4" visible="false" managed="false"/>
+                        <TextField fx:id="txtInscricaoMunicipal" promptText="Inscrição Municipal" 
+                                   prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="4" visible="false" managed="false"/>
+                    </GridPane>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Endereço -->
+                <VBox spacing="15">
+                    <Label text="Endereço:" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    
+                    <GridPane hgap="15" vgap="15">
+                        <Label text="CEP:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="txtCep" promptText="00000-000" 
+                                   prefWidth="120" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Endereço:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtEndereco" promptText="Rua, Avenida, etc" 
+                                   prefWidth="350" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label text="Número:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <TextField fx:id="txtNumero" promptText="Número" prefWidth="100"/>
+                            <Label text="Complemento:"/>
+                            <TextField fx:id="txtComplemento" promptText="Apto, Sala, etc" prefWidth="200"/>
+                        </HBox>
+                        
+                        <Label text="Bairro:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                        <TextField fx:id="txtBairro" promptText="Bairro" 
+                                   prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        
+                        <Label text="Cidade:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <TextField fx:id="txtCidade" promptText="Cidade" prefWidth="250"/>
+                            <Label text="UF:"/>
+                            <ComboBox fx:id="cbEstado" promptText="UF" prefWidth="80"/>
+                        </HBox>
+                    </GridPane>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Contato -->
+                <VBox spacing="15">
+                    <Label text="Contato:" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    
+                    <GridPane hgap="15" vgap="15">
+                        <Label text="Telefone:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="txtTelefone" promptText="(00) 0000-0000" 
+                                   prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Celular:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtCelular" promptText="(00) 00000-0000" 
+                                   prefWidth="150" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label text="E-mail:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <TextField fx:id="txtEmail" promptText="email@exemplo.com" 
+                                   prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        
+                        <Label text="Site:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                        <TextField fx:id="txtSite" promptText="www.seusite.com.br (opcional)" 
+                                   prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    </GridPane>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Botões -->
+                <HBox spacing="15" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                    <Button text="Cancelar" onAction="#handleCancelar" 
+                            style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 15 40;"/>
+                    <Button text="Salvar e Começar" onAction="#handleSalvar" 
+                            style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15 50;"/>
+                </HBox>
+                
+                <Label text="* Campos obrigatórios" style="-fx-font-size: 11px; -fx-text-fill: #666; -fx-font-style: italic;"/>
+                
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
+

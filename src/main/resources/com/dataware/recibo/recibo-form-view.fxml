@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.dataware.recibo.controller.ReciboFormController">
+
+    <top>
+        <HBox style="-fx-background-color: #19344E; -fx-padding: 15;" spacing="20" alignment="CENTER_LEFT">
+            <Button text="← Voltar" onAction="#handleVoltar" 
+                    style="-fx-background-color: #2C5F8D; -fx-text-fill: white;"/>
+            <Label text="Novo Recibo" 
+                   style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="20" style="-fx-padding: 30;">
+                
+                <!-- Informações Básicas -->
+                <VBox spacing="10">
+                    <Label text="Informações do Recibo" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    
+                    <GridPane hgap="15" vgap="15">
+                        <Label text="Número do Recibo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="txtNumeroRecibo" promptText="000001" prefWidth="150" 
+                                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Data de Emissão:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <DatePicker fx:id="dpDataEmissao" prefWidth="200" 
+                                    GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label text="Categoria:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <ComboBox fx:id="cbCategoria" promptText="Selecione a categoria" prefWidth="300" 
+                                  GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    </GridPane>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Dados do Cliente -->
+                <VBox spacing="10">
+                    <Label text="Dados do Cliente" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <ComboBox fx:id="cbCliente" promptText="Selecione o cliente" prefWidth="400"/>
+                        <Button text="Atualizar Lista" onAction="#handleAtualizarClientes" 
+                                style="-fx-background-color: #17a2b8; -fx-text-fill: white;"/>
+                    </HBox>
+                    
+                    <Label fx:id="lblDadosCliente" text="" style="-fx-font-size: 12px; -fx-text-fill: #666;"
+                           wrapText="true" maxWidth="800"/>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Valor -->
+                <VBox spacing="10">
+                    <Label text="Valor do Recibo" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    
+                    <GridPane hgap="15" vgap="15">
+                        <Label text="Valor (R$):" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="txtValor" promptText="0.00" prefWidth="200" 
+                                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Forma de Pagamento:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <ComboBox fx:id="cbFormaPagamento" promptText="Selecione" prefWidth="250" 
+                                  GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </GridPane>
+                    
+                    <Label fx:id="lblValorExtenso" text="Valor por extenso aparecerá aqui" 
+                           style="-fx-font-style: italic; -fx-text-fill: #666;" wrapText="true" maxWidth="800"/>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Referente -->
+                <VBox spacing="10">
+                    <Label text="Referente a" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <TextArea fx:id="txtReferente" promptText="Descrição do que está sendo pago..." 
+                              prefRowCount="4" wrapText="true"/>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Observações -->
+                <VBox spacing="10">
+                    <Label text="Observações (Opcional)" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <TextArea fx:id="txtObservacoes" promptText="Observações adicionais..." 
+                              prefRowCount="3" wrapText="true"/>
+                </VBox>
+                
+                <!-- Botões -->
+                <HBox spacing="15" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                    <Button text="Gerar Recibo" onAction="#handleGerarRecibo" 
+                            style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15 40;"/>
+                    <Button text="Limpar" onAction="#handleLimpar" 
+                            style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 15 40;"/>
+                </HBox>
+                
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
+
+
+
