@@ -9,8 +9,8 @@ Quando você executar `mvn javafx:run` pela primeira vez, o sistema criará o ba
 ## 🏢 **2 EMPRESAS:**
 
 ### Empresa 1:
-- **Nome:** Motoboy Ajato Express Ltda
-- **CNPJ:** 45.677.973/0001-06
+- **Nome:** Motoboy luma Express Ltda
+- **CNPJ:** 98.677.973/0014-09
 - **Endereço:** Av. João Naves de Ávila, 1000 - Santa Mônica
 - **Cidade:** Uberlândia/MG
 - **CEP:** 38408-100
@@ -19,8 +19,8 @@ Quando você executar `mvn javafx:run` pela primeira vez, o sistema criará o ba
 - **Site:** www.motoboyajato.com.br
 
 ### Empresa 2:
-- **Nome:** Carlos Regis de Faria
-- **CPF:** 847.261.216-34
+- **Nome:** Carlos Faria
+- **CPF:** 823.289.261-34
 - **Endereço:** Rua das Flores, 123 - Centro
 - **Cidade:** Uberlândia/MG
 - **Celular:** (34) 98888-7777
