@@ -133,8 +133,7 @@ Veja [CHANGELOG.md](CHANGELOG.md) para histórico de versões.
 Este projeto está sob a licença MIT. Veja [LICENSE](LICENSE) para mais detalhes.
 
 ## 👤 Autor
-
-Desenvolvido com ☕ por [Seu Nome]
+Carlos R Faria
 
 ## 🐛 Problemas ou Sugestões?
 
